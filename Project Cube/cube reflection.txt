@@ -1,0 +1,17 @@
+Project Cube Reflection
+
+This is a reflection of my project cube and what I have learned from the experience.
+Learn:
+1. rand() sucks. If you run it enough times then you will start getting repeats. It is non-uniform, it will like some numbers more than others. This is a pseuo random number, there are tricks to solve this issue but why not just use <random>? Check out this link "https://channel9.msdn.com/Events/GoingNative/2013/rand-Considered-Harmful" a good watch and learn about how bad rand() really is. 
+2. Chrono is amazing to work with. Time is such an important aspect of anything and it is no different in programing. It is nice that the time is not related to the clock ticks and can measure real time accurately. At the being of the project I was trying to make ctime work with no prevail.
+Cons:
+1. There should be better error handling on each of methods. The errors are not handled too well. Currently there are not bugs but there is always the potential and it will definitely crash everything.
+2. The avg. calculations tunicates when running the functions. Since <chrono> can measure in nanoseconds and we are only using microseconds it has to be truncated.
+3. This is a major design fault. The random scramble does not filter out “nil moves.” Nil moves is when a sequence of moves does zero change to the cube. An example being “R, R’ “ this does nothing to help the scramble. By using a uniform random scramble these case while rare do exists.
+Things to do for next time:
+1. Implement a function to save the data. Since the program is modular, I can easily add a <fstream> to save all the time and each of the scrambles to a text file.
+2. A way to seed the mt engine. The cool part of the mt engine is that if you give it the same seed then it can generate the same “randomness.” This could be used to practice the same set of scrambles in a weeks/months time too compare for improvements. Also the seed could be sent to a friend and they can also generate the same scramble as you did. This will help drive the competition among cubers. They can issue each other challenges.
+3. Make use of the Kociemba algorithm. This is actually amazingly hard thing to do. Real cube timers use this algorithm. How it works is that the algorithm consider all possible state of the cube equally and then generate a number of moves to reach that state. The inverse of the sequence will be the scramble. This ensure that all state of the cube is equal possible. Also by doing this it filters out all nil moves.
+
+Cool facts:
+1. Did you know that the “gods number” is 20? This means that the cube at any state can be solved in at most 20 moves. This is actually proven quite recently in 2010. The total amount of possible position of the cube is 43 252 003 274 489 856 000 and to solve all position took no less than 35 CPU years. The research team had help from google computers in order to solve the all the positions. This total number of moves is shrunk down with the use of symmetry and dividing into sub cases.
