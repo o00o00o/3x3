@@ -1,4 +1,8 @@
 # 3x3
+
+![text](/cube_1.jpg)
+![text](/cube_2.jpg)
+
 This is my first side project written in C/C++. I've tried to incropreate all much as i've learned from my ece 150 (Fundamentals of Programming from the University  of Waterloo. For my first time, this was quite an experience and a jounry. It was amazing how fun over coming the challenges that faced me was. I hope to continue developing and become a better person alone the way. 
 
 A few 'new' things that i've learnt to use during this program was <chrono> and <random>. In class we were more or less forced to "hack" our way through the assigments but now i've learnt to respect the powers of the library. Using chrono I could achieve microsecond accuracy. While with random I could create a uniformly distributed sequence to generate my scramble. 
